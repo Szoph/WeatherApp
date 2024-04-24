@@ -3,8 +3,12 @@ import { GET } from '@/app/api/geocoding/route';
 export class ApiClient {
 
     async getRequest(location) {
-        const response = await GET(location);
-
-        return response ? response : null;
+        try {
+            const response = await GET(location);
+            return response ? response : null;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
     }
 }
