@@ -21,7 +21,7 @@ const SearchBar = ({ setShowWeather, setLoading, setNextWeather, setTodayWeather
   const handleSubmit = async (e) => {
     e.preventDefault(); 
     setLoading(true);
-    if (!searchText) {
+    if (!searchText.trim()) {
       toast.warn("Please enter a city name", {
         position: "top-right",
         autoClose: 5000,
@@ -34,7 +34,7 @@ const SearchBar = ({ setShowWeather, setLoading, setNextWeather, setTodayWeather
       }) 
       return
     }
-  const { firstData, secondData } = await apiClient.getRequest(searchText);
+  const { firstData, secondData } = await apiClient.getRequest(searchText.trim());
 
   if (firstData && secondData) {
     console.log(firstData);
