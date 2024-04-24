@@ -20,7 +20,7 @@ const NextDays = ({weatherData}) => {
 
       {weatherData && Object.keys(weatherData).length !== 0 ? (
         <>
-      <div className="border-b-2 border-[#293245] flex flex-row gap-3 justify-evenly py-3 items-center">
+      <div className="border-b-2 border-[#005187] flex flex-row gap-3 justify-evenly py-3 items-center">
       <h3 className="font-bold text-lg">Today</h3>
       <img className="w-12 h-12" src={`https://openweathermap.org/img/wn/${weatherData.daily[0].weather[0].icon}@2x.png`} alt="weather icon" />
 
@@ -28,35 +28,35 @@ const NextDays = ({weatherData}) => {
 
       </div>
 
-      <div className="border-b-2 border-[#293245] flex flex-row gap-3 justify-evenly py-3 items-center">
+      <div className="border-b-2 border-[#005187] flex flex-row gap-3 justify-evenly py-3 items-center">
       <h3 className="font-bold text-lg">{handleDay(1)}</h3>
       <img className="w-12 h-12" src={`https://openweathermap.org/img/wn/${weatherData.daily[1].weather[0].icon}@2x.png`} alt="weather icon" />
 
 <p className="text-lg"><span className="font-bold">{weatherData.daily[1].temp.max.toFixed(0)}° </span> / {weatherData.daily[1].temp.min.toFixed(0)}°</p>
 
       </div>
-      <div className="border-b-2 border-[#293245] flex flex-row gap-3 justify-evenly py-3 items-center">
+      <div className="border-b-2 border-[#005187] flex flex-row gap-3 justify-evenly py-3 items-center">
       <h3 className="font-bold text-lg">{handleDay(2)}</h3>
       <img className="w-12 h-12" src={`https://openweathermap.org/img/wn/${weatherData.daily[2].weather[0].icon}@2x.png`} alt="weather icon" />
 
 <p className="text-lg"><span className="font-bold">{weatherData.daily[2].temp.max.toFixed(0)}° </span> / {weatherData.daily[2].temp.min.toFixed(0)}°</p>
 
       </div>
-      <div className="border-b-2 border-[#293245] flex flex-row gap-3 justify-evenly py-3 items-center">
+      <div className="border-b-2 border-[#005187] flex flex-row gap-3 justify-evenly py-3 items-center">
       <h3 className="font-bold text-lg">{handleDay(3)}</h3>
       <img className="w-12 h-12" src={`https://openweathermap.org/img/wn/${weatherData.daily[3].weather[0].icon}@2x.png`} alt="weather icon" />
 
 <p className="text-lg"><span className="font-bold">{weatherData.daily[3].temp.max.toFixed(0)}° </span> / {weatherData.daily[3].temp.min.toFixed(0)}°</p>
 
       </div>
-      <div className="border-b-2 border-[#293245] flex flex-row gap-3 justify-evenly py-3 items-center">
+      <div className="border-b-2 border-[#005187] flex flex-row gap-3 justify-evenly py-3 items-center">
       <h3 className="font-bold text-lg">{handleDay(4)}</h3>
       <img className="w-12 h-12" src={`https://openweathermap.org/img/wn/${weatherData.daily[4].weather[0].icon}@2x.png`} alt="weather icon" />
 
 <p className="text-lg"><span className="font-bold">{weatherData.daily[4].temp.max.toFixed(0)}° </span> / {weatherData.daily[4].temp.min.toFixed(0)}°</p>
 
       </div>
-      <div className="border-b-2 border-[#293245] flex flex-row gap-3 justify-evenly py-3 items-center">
+      <div className="border-b-2 border-[#005187] flex flex-row gap-3 justify-evenly py-3 items-center">
       <h3 className="font-bold text-lg">{handleDay(5)}</h3>
       <img className="w-12 h-12" src={`https://openweathermap.org/img/wn/${weatherData.daily[5].weather[0].icon}@2x.png`} alt="weather icon" />
 
