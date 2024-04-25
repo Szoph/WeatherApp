@@ -2,10 +2,6 @@ import React from 'react'
 
 const Now = ({weatherData}) => {
 
-  const handleIcon = (icon) => {
-    
-  }
-
  return (
     <div className="flex md:flex-row lg:flex-row flex-col justify-between w-full p-4 pt-8">
       {weatherData && Object.keys(weatherData).length !== 0  ? (

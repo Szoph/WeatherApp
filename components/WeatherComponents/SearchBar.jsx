@@ -1,6 +1,6 @@
 "use client"; 
 import {useState, useEffect} from "react";
-import {getWeatherByCity, getWeatherByCoords} from "@/utils/ApiClient";
+import { ApiClient } from "@/utils/ApiClient";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import axios from "axios";
@@ -10,6 +10,8 @@ const SearchBar = ({ setShowWeather, setLoading, setNextWeather, setTodayWeather
   const [searchText, setSearchText] = useState("");
   const [lon, setLon] = useState(0);
   const [lat, setLat] = useState(0);
+
+  const apiClient = new ApiClient();
 
   const handleSearchText = (event) => {
     const { value } = event.target;
@@ -32,27 +34,27 @@ const SearchBar = ({ setShowWeather, setLoading, setNextWeather, setTodayWeather
       }) 
       return
     }
-    try {
-      const todayWeather = await getWeatherByCity(searchText);
-      const lat = todayWeather.coord.lat;
-      const lon = todayWeather.coord.lon;
-      setTodayWeather(todayWeather); 
-      const nextWeather = await getWeatherByCoords(lat, lon);
-      setNextWeather(nextWeather);
-      setShowWeather(true)
-    } catch (error) {
-      console.log(error, "Error fetching weather data");
-      toast.error("Error fetching weather data. Please try again later.", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
-    }
+  const { firstData, secondData } = await apiClient.getRequest(searchText);
+
+  if (firstData && secondData) {
+    console.log(firstData);
+    console.log(secondData);
+    setTodayWeather(firstData);
+    setNextWeather(secondData);
+    
+    setShowWeather(true);
+  } else {
+    toast.error("City not found", {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    })
+  }
     setLoading(false);
     setSearchText("");
   }

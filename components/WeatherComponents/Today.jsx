@@ -18,7 +18,7 @@ const Today = ({weatherData, UVIndex}) => {
   }
 
  
-    return (
+  return (
     <div className="bg-[#00699E] rounded-lg p-8">
       {weatherData ? (
         <>
