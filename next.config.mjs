@@ -6,7 +6,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    assetPrefix: isProduction ? 'https://weather-app-chi-ebon-20.vercel.app/' : 'http://localhost:3001/'
+    assetPrefix: isProduction ? 'https://weather-app-chi-ebon-20.vercel.app/' : 'http://localhost:3000/' || 'http://localhost:3001/'
 };
 
 export default nextConfig;
