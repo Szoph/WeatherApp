@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# **WeatherApp**
 
-## Getting Started
+### **A bit about this WeatherApp**
 
-First, run the development server:
+This WeatherApp gets live information from OpenWeatherMapAPI and shows hourly, daily and weekly information based on the city that is searched. 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+# Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This weather app is built using modern web technologies to ensure a responsive and efficient user experience. Below is a breakdown of the key components used in the project: 
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## **Frontend**
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Next.js**: This React-based framework is used for building the app's frontend. Next.js provides powerful features such as server-side rendering (SSR) and static site generation (SSG), which help in optimising the app for better performance and SEO. The framework also makes it easier to handle routing and API integrations. 
+- **Tailwind CSS**: A utility-first CSS framework that allows for rapid UI development. Tailwind CSS provides a wide range of pre-build classes, making it easier to style components without writing custom CSS. This leads to a more consistent design and a faster development process. 
 
-## Learn More
+## **Data Fetching** 
 
-To learn more about Next.js, take a look at the following resources:
+- **Axios**: A promise-based HTTP client used for making requests to external APIs. In this app, Axios is used to interact with the OpenWeatherMap API, fetching real-time weather based on user input. 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## **API Integration**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- **OpenWeatherMap API**: This third-party API is used to retrieve weather data, including current conditions, forecasts, and other information. The app sends requests to the API based on the user's search query, and the data is then displayed in a user-friendly format. 
 
-## Deploy on Vercel
+## **Notifications**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **React Toastify**: A React library used for displaying customizable toast notifications in the app. React Toastify is utilised to provide feedback to users, 
